@@ -4,10 +4,12 @@ import { authFunc } from "../redux/features/mockApiList";
 import { useDispatch } from "react-redux";
 import { successFunc } from "../redux/features/mockApiList";
 import MyAccordionModal from "./MyAccordionModal";
+import Accordion from 'react-bootstrap/Accordion';
 
 const MyUserAccordion = ({ user, users }) => {
   console.log("accordionUser", user);
   const dispatch = useDispatch();
+  const [toggle, setToggle] = useState(false)
 
   const [formData, setFormData] = useState({
     name: "",
@@ -207,26 +209,15 @@ const MyUserAccordion = ({ user, users }) => {
 
   return (
     <div>
-      <div className="accordion ms-md-2" id="myAccordion">
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
+      <Accordion defaultActiveKey="0"  className="ms-md-2" id="myAccordion">
+        <Accordion.Item eventKey="0" className="accordion-item">
+          <Accordion.Header className="accordion-header">
+           
               Profil Resmim
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            className="accordion-collapse collapse show"
-            data-bs-parent="#myAccordion"
-          >
-            <div className="accordion-body d-flex row">
+            
+          </Accordion.Header>
+         
+            <Accordion.Body className="d-flex row">
               <strong className="col align-self-center">
                 Mevcut Profil Resminiz:
               </strong>
@@ -244,31 +235,20 @@ const MyUserAccordion = ({ user, users }) => {
                     ></img>
                   </div>
                 )}
-                <button className="btn btn-success mt-3 ms-3" data-bs-toggle="modal" data-bs-target="#myAccordionModal">Değiştir!</button>
-                <MyAccordionModal onSubmit={handleSubmit6}  value={formData.myUrl}  onChange={handleInputChange} />
+                <button className="btn btn-success mt-3 ms-3" onClick={() => {setToggle(true)}}>Değiştir!</button>
+                <MyAccordionModal toggle = {toggle} setToggle = {setToggle} onSubmit={handleSubmit6}  value={formData.myUrl}  onChange={handleInputChange} />
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-            >
+            </Accordion.Body>
+          
+        </Accordion.Item>
+        <Accordion.Item  eventKey="1">
+          <Accordion.Header >
+          
               Kişisel Bilgilerim
-            </button>
-          </h2>
-          <div
-            id="collapseTwo"
-            className="accordion-collapse collapse"
-            data-bs-parent="#myAccordion"
-          >
-            <div className="accordion-body d-flex row">
+          
+          </Accordion.Header>
+         
+            <Accordion.Body className=" d-flex row">
               <strong className="col align-self-center">
                 Kişisel Bilgilerim:
               </strong>
@@ -308,28 +288,17 @@ const MyUserAccordion = ({ user, users }) => {
                   </button>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
+            </Accordion.Body>
+         
+        </Accordion.Item>
+        <Accordion.Item eventKey="2" >
+          <Accordion.Header>
+           
               Kullanıcı Adım
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            className="accordion-collapse collapse"
-            data-bs-parent="#myAccordion"
-          >
-            <div className="accordion-body d-flex row">
+            
+          </Accordion.Header>
+         
+            <Accordion.Body className="d-flex row">
               <strong className="col align-self-center">
                 Kullanıcı Adı İşlemlerim:
               </strong>
@@ -356,28 +325,16 @@ const MyUserAccordion = ({ user, users }) => {
                   </button>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseFourth"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
+            </Accordion.Body>
+         
+        </Accordion.Item>
+        <Accordion.Item eventKey="3">
+          <Accordion.Header>
+          
               Şifrem
-            </button>
-          </h2>
-          <div
-            id="collapseFourth"
-            className="accordion-collapse collapse"
-            data-bs-parent="#myAccordion"
-          >
-            <div className="accordion-body d-flex row">
+          </Accordion.Header>
+        
+            <Accordion.Body className="d-flex row">
               <strong className="col align-self-center">
                 Şifre İşlemlerim:
               </strong>
@@ -430,28 +387,17 @@ const MyUserAccordion = ({ user, users }) => {
                   </button>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseFifth"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
+            </Accordion.Body>
+         
+        </Accordion.Item>
+        <Accordion.Item eventKey="4">
+          <Accordion.Header >
+          
               E-Postam
-            </button>
-          </h2>
-          <div
-            id="collapseFifth"
-            className="accordion-collapse collapse"
-            data-bs-parent="#myAccordion"
-          >
-            <div className="accordion-body d-flex row">
+           
+          </Accordion.Header>
+         
+            <Accordion.Body className="d-flex row">
               <strong className="col align-self-center">
                 E-Posta İşlemlerim:
               </strong>
@@ -478,28 +424,17 @@ const MyUserAccordion = ({ user, users }) => {
                   </button>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseSixth"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
+            
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="5">
+          <Accordion.Header >
+            
               Hakkımda
-            </button>
-          </h2>
-          <div
-            id="collapseSixth"
-            className="accordion-collapse collapse"
-            data-bs-parent="#myAccordion"
-          >
-            <div className="accordion-body d-flex row">
+        
+          </Accordion.Header>
+         
+            <Accordion.Body className="d-flex row">
               <strong className="col align-self-center">Hakkımda:</strong>
               <div className="col">
                 <form onSubmit={handleSubmit5}>
@@ -523,28 +458,17 @@ const MyUserAccordion = ({ user, users }) => {
                   </button>
                 </form>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseSeventh"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
+            </Accordion.Body>
+         
+        </Accordion.Item>
+        <Accordion.Item eventKey="6">
+          <Accordion.Header>
+           
               Hesabı Sil
-            </button>
-          </h2>
-          <div
-            id="collapseSeventh"
-            className="accordion-collapse collapse"
-            data-bs-parent="#myAccordion"
-          >
-            <div className="accordion-body d-flex row">
+            
+          </Accordion.Header>
+         
+            <Accordion.Body className="d-flex row">
               <strong className="col align-self-center">Hesap Silme:</strong>
               <div className="col">
                 <p>Hesabı gerçekten silmek istiyor musunuz?</p>
@@ -552,10 +476,10 @@ const MyUserAccordion = ({ user, users }) => {
                   Eminim sil
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Accordion.Body>
+          
+        </Accordion.Item>
+      </Accordion>
     </div>
   );
 };

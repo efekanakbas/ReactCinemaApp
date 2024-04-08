@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { useMovieListFavorited } from "../hooks/useMovieList";
 import MyUserAccordion from "../components/MyUserAccordion";
+import Dropdown from "react-bootstrap/Dropdown";
 
 const User = () => {
   const [allFav, setAllFav] = useState();
@@ -320,74 +321,67 @@ const User = () => {
                       >
                         <i className="bi bi-person myUserUlItem"></i>
                       </button>
-                      <div className="dropdown-center">
-                        <button
-                          data-bs-toggle="dropdown"
-                          className="dropdown-toggle list-group-item myUserUl2 btn btn-outline-secondary"
-                        >
+                      <Dropdown className="">
+                        <Dropdown.Toggle className="dropdown-toggle list-group-item myUserUl2 btn btn-outline-secondary">
                           <i className="bi bi-film myUserUlItem"></i>
-                        </button>
-                        <ul className="dropdown-menu dropdown-menu-dark ">
-                          <li className="dropdown-item disabled">
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu variant="dark">
+                          <Dropdown.Item disabled>
                             Favori Film Listeleri
-                          </li>
-                          <li>
-                            <hr className="dropdown-divider" />
-                          </li>
-                          <li>
+                          </Dropdown.Item>
+                          <Dropdown.Divider/>
+                          <Dropdown.Item>
                             <a
                               onClick={myFavFunc}
-                              className="dropdown-item"
+                              
                               style={{ cursor: "pointer" }}
                             >
                               Favori Film Listem
                             </a>
-                          </li>
-                          <li>
+                          </Dropdown.Item>
+                          <Dropdown.Item>
                             <a
                               onClick={allFavFunc}
-                              className="dropdown-item"
+                      
                               style={{ cursor: "pointer" }}
                             >
                               Tüm Favori Film Listeleri
                             </a>
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="dropdown-center">
-                        <button
-                          data-bs-toggle="dropdown"
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                      <Dropdown >
+                        <Dropdown.Toggle
+                          
                           className="dropdown-toggle list-group-item myUserUl2 btn btn-outline-secondary"
                         >
                           <i className="bi bi-camera-reels myUserUlItem"></i>
-                        </button>
-                        <ul className="dropdown-menu dropdown-menu-dark ">
-                          <li className="dropdown-item disabled">
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu variant="dark" >
+                          <Dropdown.Item className="dropdown-item disabled">
                             Favori Dizi Listeleri
-                          </li>
-                          <li>
-                            <hr className="dropdown-divider" />
-                          </li>
-                          <li>
+                          </Dropdown.Item>
+                          <Dropdown.Divider/>
+                          <Dropdown.Item>
                             <a
                               onClick={myFavSeriesFunc}
-                              className="dropdown-item"
+                             
                               style={{ cursor: "pointer" }}
                             >
                               Favori Dizi Listem
                             </a>
-                          </li>
-                          <li>
+                          </Dropdown.Item>
+                          <Dropdown.Item>
                             <a
                               onClick={allFavSeriesFunc}
-                              className="dropdown-item"
+                              
                               style={{ cursor: "pointer" }}
                             >
                               Tüm Favori Dizi Listeleri
                             </a>
-                          </li>
-                        </ul>
-                      </div>
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
                       <button
                         onClick={myUserSettingsFunc}
                         className="list-group-item myUserUl2 btn btn-outline-secondary"

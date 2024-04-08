@@ -134,14 +134,16 @@ const MyNavbar = () => {
                 )}
                   <Dropdown className="d-inline">
                     <Dropdown.Toggle 
-                      id="userBut"
+                      size="sm"
+                      variant="warning"
+                      // id="userBut"
                     >
                       <span className="mySpan">{successData.username}</span>
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                       
                         <Dropdown.Item
-                          className="dropdown-item"
+                        
                           href={`/user/${successData.username}`}
                         >
                           Profilim
@@ -149,7 +151,7 @@ const MyNavbar = () => {
                       
                       
                         <Dropdown.Item
-                          className="dropdown-item"
+                          
                           style={{ cursor: "pointer" }}
                           onClick={handleLogout}
                         >

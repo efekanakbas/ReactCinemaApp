@@ -1,6 +1,6 @@
 
-//@ts-ignore
-import MyNavbar from "./MyNavbar";
+
+import MyNavbar from "./myNavbar";
 import MyFooter from "./MyFooter";
 
 const MyLayout = ({ children }) => {

@@ -1,6 +1,6 @@
 
 
-import MyNavbar from "./myNavbar";
+import MyNavbar from "./MyNavbar";
 import MyFooter from "./MyFooter";
 
 const MyLayout = ({ children }) => {

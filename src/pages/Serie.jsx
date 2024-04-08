@@ -1,4 +1,4 @@
-import  { useRef, useEffect } from "react";
+import  { useRef, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useFetchHook4 } from "../hooks/useFetchHook4";
 import MyLayout from "../components/MyLayout";
@@ -22,6 +22,7 @@ const Serie = () => {
   const progressLabelRef = useRef(null);
   console.log("myData aslan", item);
   const { innerFunc } = useMovieListFavoritedPost();
+  const [toggle, setToggle] = useState(false)
 
   const buttonSerieFunc = () => {
     axios
@@ -144,8 +145,7 @@ const Serie = () => {
               </div>
               <div className="col-md-4">
                 <button
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#myOffcanvas"
+                  onClick={() => {setToggle(true)}}
                   className="btn btn-outline-secondary mb-3"
                 >
                   <i className="bi bi-star-fill"></i> Puan Ver
@@ -155,6 +155,8 @@ const Serie = () => {
                   image={item.poster_path}
                   item={item}
                   fetchType="tv"
+                  toggle = {toggle}
+                  setToggle = {setToggle}
                 />
               </div>
               <div className="col-md-4  ">

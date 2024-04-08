@@ -3,8 +3,9 @@ import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
-const MyOffcanvas = ({ type, image, item, fetchType }) => {
+const MyOffcanvas = ({ type, image, item, fetchType, toggle, setToggle }) => {
   const [value, setValue] = useState();
   console.log("benimFetch", fetchType);
 
@@ -44,8 +45,11 @@ const MyOffcanvas = ({ type, image, item, fetchType }) => {
 
   return (
     <div>
-      <div
-        className="offcanvas offcanvas-end bg-light"
+      <Offcanvas 
+        show = {toggle}
+        onHide = {() => {setToggle(false)}}
+        placement="end"
+        className="bg-light"
         tabIndex="-1"
         id="myOffcanvas"
         aria-labelledby="offcanvasExampleLabel"
@@ -58,7 +62,7 @@ const MyOffcanvas = ({ type, image, item, fetchType }) => {
           <button
             type="button"
             className="btn-close"
-            data-bs-dismiss="offcanvas"
+            onClick={() => {setToggle(false)}}
             aria-label="Close"
           ></button>
         </div>
@@ -98,7 +102,7 @@ const MyOffcanvas = ({ type, image, item, fetchType }) => {
             }}
           ></div>
         </div>
-      </div>
+      </Offcanvas>
     </div>
   );
 };

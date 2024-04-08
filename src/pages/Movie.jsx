@@ -1,4 +1,4 @@
-import  { useRef, useEffect} from "react";
+import  { useRef, useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import { useFetchHook3 } from "../hooks/useFetchHook3";
 import MyLayout from "../components/MyLayout";
@@ -22,6 +22,7 @@ const Movie = () => {
   const progressLabelRef = useRef(null);
   const { innerFunc } = useMovieListFavoritedPost();
   console.log("succesid", successData.userId);
+  const [toggle, setToggle] = useState(false)
 
 
 
@@ -145,8 +146,7 @@ const Movie = () => {
               </div>
               <div className="col-md-4  mb-3">
                 <button
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#myOffcanvas"
+                  onClick={() => {setToggle(true)}}
                   className="btn btn-outline-secondary"
                 >
                   <i className="bi bi-star-fill"></i> Puan Ver
@@ -156,6 +156,8 @@ const Movie = () => {
                   image={item.poster_path}
                   item={item}
                   fetchType="movie"
+                  toggle = {toggle}
+                  setToggle = {setToggle}
                 />
               </div>
               <div className="col-md-4  ">

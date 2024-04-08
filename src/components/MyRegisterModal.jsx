@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
 import "../static/css/myModal.css";
+import Modal from "react-bootstrap/Modal";
 
-const MyRegisterModal = () => {
+const MyRegisterModal = ({tog, setTog}) => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -95,18 +96,17 @@ const MyRegisterModal = () => {
 
   return (
     <div>
-      <div className="modal fade" id="myRegisterModal">
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content">
-            <div className="modal-header">
+      <Modal show = {tog} onHide={() => {setTog(false)}}  id="myRegisterModal">
+      
+            <Modal.Header >
               <h3 className="modal-title">Kayıt Ol</h3>
               <button
                 className="btn-close"
                 type="button"
-                data-bs-dismiss="modal"
+                onClick= {() => {setTog(false)}}
               ></button>
-            </div>
-            <div className="modal-body">
+            </Modal.Header>
+            <Modal.Body >
               <h6 className="mb-3 ms-1 text-secondary text-start">
                 Lütfen ilgili yerleri doldurun.
               </h6>
@@ -171,16 +171,14 @@ const MyRegisterModal = () => {
                   Submit
                 </button>
               </form>
-            </div>
-            <div className="modal-footer text-end">
-              <button className="btn btn-danger" data-bs-dismiss="modal">
+            </Modal.Body>
+            <Modal.Footer className=" text-end">
+              <button className="btn btn-danger" onClick={() => {setTog(false)}}>
                 Close
               </button>
-            </div>
-          </div>
+            </Modal.Footer>
+          </Modal>
         </div>
-      </div>
-    </div>
   );
 };
 

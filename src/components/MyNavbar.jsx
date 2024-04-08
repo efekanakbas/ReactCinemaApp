@@ -9,6 +9,7 @@ import { useRef, useState} from "react";
 
 import MyLoginModal from "./MyLoginModal";
 import { authFunc } from "../redux/features/mockApiList";
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const MyNavbar = () => {
  
@@ -131,34 +132,32 @@ const MyNavbar = () => {
                     ></img>
                 
                 )}
-                  <div className="dropdown d-inline">
-                    <button
-                      className="dropdown-toggle"
-                      data-bs-toggle="dropdown"
+                  <Dropdown className="d-inline">
+                    <Dropdown.Toggle 
                       id="userBut"
                     >
                       <span className="mySpan">{successData.username}</span>
-                    </button>
-                    <ul className="dropdown-menu">
-                      <li>
-                        <a
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      
+                        <Dropdown.Item
                           className="dropdown-item"
                           href={`/user/${successData.username}`}
                         >
                           Profilim
-                        </a>
-                      </li>
-                      <li>
-                        <a
+                        </Dropdown.Item>
+                      
+                      
+                        <Dropdown.Item
                           className="dropdown-item"
                           style={{ cursor: "pointer" }}
                           onClick={handleLogout}
                         >
                           Çıkış
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                        </Dropdown.Item>
+                      
+                    </Dropdown.Menu>
+                  </Dropdown>
                   <span className="badge bg-warning ms-2 rounded-4">0</span>
                 </div>
               )}

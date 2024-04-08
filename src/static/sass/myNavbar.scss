@@ -1,0 +1,63 @@
+.myNavbar {
+  background-color: #77091c;
+}
+
+#myNavbarCssStyle {
+  padding-bottom: 12rem;
+  transition: opacity 0.8s, transform 0.4s;
+}
+
+.myLi {
+  display: inline;
+  transform: translate(0, 4px);
+  white-space: nowrap;
+  &:not(:last-child) {
+    margin-right: 12px;
+  }
+}
+
+.myA {
+  text-decoration: none;
+  font-size: 0.9em;
+  color: white;
+  &:hover {
+    color: lightgray;
+  }
+}
+
+.myInput {
+  font-size: 0.8rem;
+  width: 15.11rem;
+  padding-left: 10px;
+  position: relative;
+}
+
+#userBut {
+  border-radius: 20px;
+  box-shadow: 2px 4px;
+  user-select: none;
+  &:hover {
+    background-color: lightgrey;
+    &:active {
+      background-color: gray;
+      transform: translate(0, 5px);
+      box-shadow: 2px 3px black;
+      color: whitesmoke;
+    }
+  }
+}
+
+.item1 {
+  text-decoration: none;
+}
+
+.item4 {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+@media (max-width: 500px) {
+  .item4 {
+    padding-left: 120px;
+  }
+}

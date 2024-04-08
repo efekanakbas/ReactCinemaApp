@@ -1,0 +1,68 @@
+#myPagenationCard {
+  max-width: 800px;
+  transform: translate(35px);
+  box-shadow: 0 4px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.myPagenationP {
+  transform: translate(40px);
+  padding-bottom: 1rem;
+}
+
+#myPagenationImg {
+  height: 100%;
+  width: 100%;
+}
+#myPagenationImg:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+#myPagenationImg:not(:hover) {
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+
+#myPagenationImgDiv {
+  padding: 2%;
+}
+
+#MyPaganationA {
+  text-decoration: none;
+}
+
+#myPaganationI {
+  color: grey;
+}
+#myPaganationI:hover {
+  color: black;
+  border-bottom: black 2px solid;
+}
+
+#myPagenationImg2 {
+  height: 100%;
+  width: 100%;
+}
+
+#myPagenationImgDiv {
+  padding: 2%;
+}
+
+#paginationHr {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #myPagenationCard {
+    transform: translate(19px);
+    margin: 2rem 0;
+  }
+  .myPagenationP {
+    transform: translate(27px);
+    padding-bottom: 0.7rem;
+    padding-top: 1rem;
+  }
+  #paginationHr {
+    display: block;
+    margin-top: 34px;
+  }
+}

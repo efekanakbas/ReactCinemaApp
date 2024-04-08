@@ -1,0 +1,38 @@
+(
+                <div>
+                  <img
+                    className="me-2 mb-1 rounded-4"
+                    width={"30px"}
+                    src="https://simg01.imgsinemalar.com/img/user/no_avatar.jpg"
+                  ></img>
+                  <div className="dropdown d-inline">
+                    <button
+                      className="dropdown-toggle"
+                      data-bs-toggle="dropdown"
+                      id="userBut"
+                    >
+                      <span className="mySpan">{successData.username}</span>
+                    </button>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <a
+                          className="dropdown-item"
+                          href={`/user/${successData.username}`}
+                        >
+                          Profilim
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="dropdown-item"
+                          style={{ cursor: "pointer" }}
+                          onClick={handleLogout}
+                        >
+                          Çıkış
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <span className="badge bg-warning ms-2 rounded-4">0</span>
+                </div>
+              )

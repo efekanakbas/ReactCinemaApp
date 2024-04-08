@@ -1,0 +1,74 @@
+.card-group {
+  width: 70%;
+  border: none;
+}
+
+.card {
+  border: none;
+  background-color: whitesmoke;
+  border-radius: 4%;
+  box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.1);
+  &:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+  }
+  &:not(:hover) {
+    transition: transform 0.3s ease;
+    transform: scale(1);
+  }
+}
+
+.card-title {
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.card {
+  width: 90%;
+}
+
+.card-image-top {
+  border-radius: 10px 10px 0px 0px;
+  height: 190px;
+}
+
+.myCardText {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  color: grey;
+  text-overflow: ellipsis;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: orange;
+  font-size: 30px;
+}
+
+.slick-prev {
+  top: 127px;
+  left: -14.4px;
+  z-index: 1;
+}
+
+.slick-next {
+  top: 127px;
+  right: 9px;
+  z-index: 1;
+}
+
+#mySliderCardHover {
+  cursor: pointer;
+  &:hover {
+    #mySliderCardTitle {
+      color: blue;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .slick-next {
+    width: 23px;
+  }
+}

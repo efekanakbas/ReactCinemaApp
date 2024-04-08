@@ -1,0 +1,26 @@
+@charset "UTF-8";
+.myNava {
+  color: rgb(185, 181, 181);
+}
+
+.myVision {
+  color: black;
+}
+.myVision:hover {
+  background-color: lightgray;
+  color: white;
+}
+
+.myNava {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  #çeçeçe {
+    transform: translate(-5.5px);
+  }
+  .mymymy,
+  .mymymy2 {
+    transform: translate(13px);
+  }
+}

@@ -1,0 +1,70 @@
+.progress-wrapper {
+  width: 100%;
+  background-color: #ccc;
+  height: 30px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  transition: width 0.3s;
+}
+
+.progress-label {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* Renk sınıfları */
+.red {
+  background-color: #ff0000;
+  color: white;
+}
+
+.orange {
+  background-color: #ffa500;
+  color: white;
+}
+
+.yellow {
+  background-color: #ffff00;
+  color: black;
+}
+
+.green {
+  background-color: #008000;
+  color: white;
+}
+
+.movieImg {
+  width: 700px;
+  height: 500px;
+  margin-top: 50px;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  object-fit: cover;
+}
+
+.movieBackDropImg {
+  width: 150px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-right: 50px;
+}
+
+#myPagenationImg2 {
+  height: 100%;
+  width: 100%;
+}
+
+// #myPagenationCard2{
+//     margin-left: 45px;
+// }

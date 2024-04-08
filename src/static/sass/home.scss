@@ -1,0 +1,9 @@
+#mySimpleSlider {
+  transform: translate();
+}
+
+@media (max-width: 600px) {
+  #mySimpleSlider {
+    transform: translate(8.5px);
+  }
+}

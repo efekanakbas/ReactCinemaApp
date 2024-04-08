@@ -1,0 +1,16 @@
+<div className="myNav mb-4  d-flex justify-content-between">
+  <a href="#" className="nowVision">
+    Vizyondaki Filmler <i className="bi bi-chevron-right"></i>
+  </a>
+  <ul className="nowVisionUl d-flex">
+    <li className="d-inline myHomeLiActive">
+      <a className="myHomeLinkActive" href="#"> Vizyondaki Filmler </a>
+    </li>
+    <li className="d-inline myHomeLi ">
+      <a className="myHomeLink" href="#"> Yakında Sinemalarda </a>
+    </li>
+    <li className="d-inline myHomeLiNot">
+      <a className="myHomeLinkNot" href="#"> En Çok Beklenen Filmler </a>
+    </li>
+  </ul>
+</div>

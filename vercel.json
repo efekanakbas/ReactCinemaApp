@@ -1,1 +1,12 @@
-{ "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }] }
+{
+    "routes": [
+      { "src": "/", "dest": "/" },
+      { "src": "/movies/:var/:page", "dest": "/" },
+      { "src": "/tv/:var/:page", "dest": "/" },
+      { "src": "/movie/:id", "dest": "/" },
+      { "src": "/movie/:id", "dest": "/" },
+      { "src": "/tv/:id", "dest": "/" },
+      { "src": "/user/:id", "dest": "/" },
+      { "src": "/search/:variable/:page", "dest": "/" }
+    ]
+    }
